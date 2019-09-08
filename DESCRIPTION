@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
     person(given = "Kelvin",
            family = "Li",
-           role = c("researcher"),
+           role = c("aut", "cre"),
            email = "yang.kelvinli@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: Learn Markov blankets using Minimum Message Length.

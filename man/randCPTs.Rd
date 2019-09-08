@@ -4,7 +4,7 @@
 \alias{randCPTs}
 \title{A function to generate random CPTs for a given DAG}
 \usage{
-randCPTs(dag, maxArity, beta, debug = FALSE)
+randCPTs(dag, maxArity, beta, arities = NULL, debug = FALSE)
 }
 \arguments{
 \item{dag}{A DAG in the bnlearn format.}
@@ -12,10 +12,12 @@ randCPTs(dag, maxArity, beta, debug = FALSE)
 \item{maxArity}{The maximum arity for variables. That is, the maximum number of values that a variable
 can have.}
 
-\item{beta}{The concentration parameter is a symmetric Dirichlet distribution. When beta=1, it is the 
+\item{beta}{The concentration parameter is a symmetric Dirichlet distribution. When beta=1, it is the
 same as sampling from uniform distribution; when beta>1, CPT values are more likeliy to be equal since
 they are sampled from a center-peaked n-1 simplex; when beta<1, CPT values are extreme, since they are
 sampled from conners of the n-1 simplex.}
+
+\item{arities}{The vector of arities for all nodes. By default, it is NULL.}
 
 \item{debug}{A boolean argument to display detailed steps.}
 }
@@ -24,8 +26,8 @@ The returned CPTs are stored in a list that matches bnlearn CPTs format, so that
 bnlearn::rbn() can be used to sample data.
 }
 \description{
-This function randomly generate conditional probability tables (CPTs) for a given DAG, with specified 
-maximum arity and concentration parameter from a symmetric Dirichlet distribution. Values of variables 
+This function randomly generate conditional probability tables (CPTs) for a given DAG, with specified
+maximum arity and concentration parameter from a symmetric Dirichlet distribution. Values of variables
 are sampled from capital alphabet letters, A, B, ... The function has dependency on the library gtools
 on its rdirichlet() function.
 }
