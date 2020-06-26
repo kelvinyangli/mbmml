@@ -20,6 +20,7 @@ mml_with_parents = function(indexListPerNodePerValue, arities, sampleSize, paren
   numParents = length(parentsIndices)
   numParentsInstantiations = prod(arities[parentsIndices])
   # sum(log(alpha_j - 1)!)
+  # log_gamma(n+1) is an approximation of log(factorial(n))
   constant1 = sum(sapply(alpha, log_gamma))
   # log((alpha0 - 1)!)
   constant2 = log_gamma(alpha0)
